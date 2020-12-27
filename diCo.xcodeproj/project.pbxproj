@@ -109,6 +109,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		77FBBB512599387E00C570D6 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				CE8A4AD1250050E200DA9D86 /* DetailsVC.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 		B654DB86F95026A9F6E8A880 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +167,7 @@
 		CE72596824EA3DA40084A0DD /* diCo */ = {
 			isa = PBXGroup;
 			children = (
+				77FBBB512599387E00C570D6 /* Details */,
 				77FBBB112598D9E000C570D6 /* Home */,
 				77FBBB0D2598D9B300C570D6 /* Universal Use */,
 				CE04F48A24ECE44500B80F86 /* Login firebase */,
@@ -166,7 +175,6 @@
 				CE72596B24EA3DA40084A0DD /* SceneDelegate.swift */,
 				CE72596D24EA3DA40084A0DD /* WelcomeVC.swift */,
 				CE72596F24EA3DA40084A0DD /* Main.storyboard */,
-				CE8A4AD1250050E200DA9D86 /* DetailsVC.swift */,
 				CE04F49C24ECF8A700B80F86 /* popularVC.swift */,
 				CE72598324EBB8D10084A0DD /* LibraryVC.swift */,
 				CE72597224EA3DA70084A0DD /* Assets.xcassets */,

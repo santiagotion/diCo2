@@ -11,28 +11,24 @@ import UIKit
 class DetailsVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
     
-    //var selectedWord : Class!
+    var selectedWord : Word!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-          return 6
+        return selectedWord.meanings[0].synonyms.count
       }
       
       
       func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-          return 1
+          return selectedWord.meanings[0].synonyms.count
       }
       
       func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-          
-       
-            
           
           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "synonymsCell", for: indexPath)
           

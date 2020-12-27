@@ -22,7 +22,7 @@ class HomeVC: UIViewController,  UICollectionViewDataSource, UICollectionViewDel
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    
+    var wordToPass: Word!
     var audioPlayer:AVAudioPlayer!
 
     var ref:DatabaseReference?
@@ -135,7 +135,7 @@ class HomeVC: UIViewController,  UICollectionViewDataSource, UICollectionViewDel
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //        wordToPass = class[indexPath.item]
+        wordToPass = DataHolder.dict_data[indexPath.item]
         self.performSegue(withIdentifier: "toDetails2", sender: indexPath)
     }
     
@@ -161,9 +161,7 @@ class HomeVC: UIViewController,  UICollectionViewDataSource, UICollectionViewDel
            
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-//        wordToPass = class[indexPath.item]
-        
+        wordToPass = DataHolder.dict_data[indexPath.item]
         self.performSegue(withIdentifier: "toDetails2", sender: indexPath)
         
     }
@@ -177,8 +175,7 @@ class HomeVC: UIViewController,  UICollectionViewDataSource, UICollectionViewDel
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detailViewController = segue.destination as? DetailsVC {
-            
-         // detailViewController.selectedWord = wordToPass
+            detailViewController.selectedWord = wordToPass
         }
     }
    
