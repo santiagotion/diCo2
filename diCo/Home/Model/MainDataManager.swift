@@ -43,6 +43,7 @@ class MainDataManager {
             
             if let j_array = json as? [Any]
             {
+                print("Being Called")
                 for _array in j_array
                 {
                     var audio = "";
@@ -55,6 +56,8 @@ class MainDataManager {
                                 if let sound = dict["audio"] as? String
                                 {
                                     audio = sound
+                                    print(audio)
+                                    //print("Being Called")
                                 }
                             }
                         }
@@ -77,7 +80,6 @@ class MainDataManager {
             }
             completion(definitions)
         })
-        
         task.resume()
         //return definitions
     }

@@ -54,20 +54,33 @@ class HomeVC: UIViewController,  UICollectionViewDataSource, UICollectionViewDel
             // Code to execute when a new word is added
             let w_snapshot = snapshot.childSnapshot(forPath: "Word")
             let a_snapshot = snapshot.childSnapshot(forPath: "Audio")
+            let frequency_snapshot = snapshot.childSnapshot(forPath: "Frequency")
+            let date_snapshot = snapshot.childSnapshot(forPath: "Date")
+            let meanings_snapshot = snapshot.childSnapshot(forPath: "Meanings")
             var t_audio = ""
             var t_word = ""
+            var frequency = 1
+            var date = 0.0
+            var meanings: [Any] = []
             let audio = a_snapshot.value as? String
             let word = w_snapshot.value as? String
             if let actualWord = word{
-                //self.data.append(actualWord)
-                //self.filteredData = self.data
-                //self.tableView.reloadData()
                 t_word = actualWord
             }
             if let actualAudio = audio
             {
                 t_audio = actualAudio
             }
+            if let t_frequency = frequency_snapshot.value as? Int {
+                frequency = t_frequency
+            }
+            if let t_date = date_snapshot.value as? Double {
+                date = t_date
+            }
+            if let t_meanings = meanings_snapshot.value as? [Any] {
+                meanings = t_meanings
+            }
+            let General_word = Word(word: t_word, audio: t_audio, date: date, frequency: frequency, json: meanings)
             let dict = MyDict(word: t_word, audio: t_audio)
             DataHolder.dict_data.append(dict)
             self.tableView.reloadData()
