@@ -1,0 +1,6 @@
+framework module Pods_diCo {
+  umbrella header "Pods-diCo-umbrella.h"
+
+  export *
+  module * { export * }
+}
