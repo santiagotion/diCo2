@@ -11,5 +11,5 @@ import UIKit
 import FirebaseDatabase
 
 class DataHolder{
-    static var dict_data = [MyDict]()
+    static var dict_data = [Word]()
 }

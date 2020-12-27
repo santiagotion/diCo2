@@ -81,8 +81,7 @@ class HomeVC: UIViewController,  UICollectionViewDataSource, UICollectionViewDel
                 meanings = t_meanings
             }
             let General_word = Word(word: t_word, audio: t_audio, date: date, frequency: frequency, json: meanings)
-            let dict = MyDict(word: t_word, audio: t_audio)
-            DataHolder.dict_data.append(dict)
+            DataHolder.dict_data.append(General_word)
             self.tableView.reloadData()
             self.collectionView.reloadData()
         })

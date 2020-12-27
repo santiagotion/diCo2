@@ -16,7 +16,7 @@ class RecentCell: UICollectionViewCell {
     
     @IBOutlet weak var message: UILabel!
     
-    var dict : MyDict!
+    var dict : Word!
     
     var delegate : TableViewDelegate?
     
@@ -35,10 +35,23 @@ class RecentCell: UICollectionViewCell {
         //End
         
     }
-    func setMeaning(dictionary: MyDict)
+    func setMeaning(dictionary: Word)
     {
         dict = dictionary
         title.text = dictionary.word
+        var counter = 1
+        var text: String = ""
+        if (dictionary.meanings.count > 0) {
+            for definition in dictionary.meanings[0].definitions {
+                text = text + String(counter)+":"+definition.definition + "\n"
+                counter = counter + 1
+                if (counter == 3){
+                    break
+                }
+            }
+        }
+        //message.text = dictionary.meanings[0].definitions[0].definition
+        message.text = text
     }
     @IBAction func play_sound(_ sender: Any) {
         delegate?.playSound(url: dict.audio)

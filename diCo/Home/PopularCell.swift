@@ -21,7 +21,7 @@ class PopularCell: UITableViewCell {
     
     @IBOutlet weak var message: UILabel!
     
-    var dict : MyDict!
+    var dict : Word!
     
     var delegate : TableViewDelegate?
     
@@ -36,10 +36,17 @@ class PopularCell: UITableViewCell {
         "image8",
         "image9",
     ]
-    func setMeaning(dictionary: MyDict)
+    func setMeaning(dictionary: Word)
     {
         dict = dictionary
         title.text = dictionary.word
+        var text: String = "Missing"
+        if dictionary.meanings.count > 0 {
+            if (dictionary.meanings[0].definitions.count > 0) {
+                text = dictionary.meanings[0].definitions[0].definition
+            }
+        }
+        message.text = text
     }
     
     override func awakeFromNib() {
