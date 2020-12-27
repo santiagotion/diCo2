@@ -3,11 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		15B1A70D76995B2304D4F5ED /* Pods_diCo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B7B32440C33B3AA89AA549 /* Pods_diCo.framework */; };
+		77FBBB0F2598D9C600C570D6 /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FBBB0E2598D9C600C570D6 /* FetchData.swift */; };
+		77FBBB142598D9FF00C570D6 /* APIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FBBB132598D9FF00C570D6 /* APIDataManager.swift */; };
+		77FBBB182598DA1800C570D6 /* MainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FBBB172598DA1800C570D6 /* MainDataManager.swift */; };
 		CE04F48724ECCBD600B80F86 /* RecentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F48624ECCBD600B80F86 /* RecentCell.swift */; };
 		CE04F48924ECDDEA00B80F86 /* PopularCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F48824ECDDEA00B80F86 /* PopularCell.swift */; };
 		CE04F48C24ECE48300B80F86 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F48B24ECE48300B80F86 /* SignInVC.swift */; };
@@ -30,6 +33,9 @@
 
 /* Begin PBXFileReference section */
 		503E2364936E766B05C8AE66 /* Pods-diCo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-diCo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-diCo/Pods-diCo.debug.xcconfig"; sourceTree = "<group>"; };
+		77FBBB0E2598D9C600C570D6 /* FetchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchData.swift; sourceTree = "<group>"; };
+		77FBBB132598D9FF00C570D6 /* APIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIDataManager.swift; sourceTree = "<group>"; };
+		77FBBB172598DA1800C570D6 /* MainDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainDataManager.swift; sourceTree = "<group>"; };
 		92B7B32440C33B3AA89AA549 /* Pods_diCo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_diCo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA91FCA82B12E4A29D3E12E /* Pods-diCo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-diCo.release.xcconfig"; path = "Pods/Target Support Files/Pods-diCo/Pods-diCo.release.xcconfig"; sourceTree = "<group>"; };
 		CE04F48624ECCBD600B80F86 /* RecentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentCell.swift; sourceTree = "<group>"; };
@@ -67,6 +73,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		77FBBB0D2598D9B300C570D6 /* Universal Use */ = {
+			isa = PBXGroup;
+			children = (
+				77FBBB0E2598D9C600C570D6 /* FetchData.swift */,
+			);
+			path = "Universal Use";
+			sourceTree = "<group>";
+		};
+		77FBBB112598D9E000C570D6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CE72597F24EA96F60084A0DD /* HomeVC.swift */,
+				CE04F48824ECDDEA00B80F86 /* PopularCell.swift */,
+				CE04F48624ECCBD600B80F86 /* RecentCell.swift */,
+				77FBBB162598DA0800C570D6 /* Model */,
+				77FBBB122598D9ED00C570D6 /* API */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		77FBBB122598D9ED00C570D6 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				77FBBB132598D9FF00C570D6 /* APIDataManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		77FBBB162598DA0800C570D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				77FBBB172598DA1800C570D6 /* MainDataManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B654DB86F95026A9F6E8A880 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +159,8 @@
 		CE72596824EA3DA40084A0DD /* diCo */ = {
 			isa = PBXGroup;
 			children = (
+				77FBBB112598D9E000C570D6 /* Home */,
+				77FBBB0D2598D9B300C570D6 /* Universal Use */,
 				CE04F48A24ECE44500B80F86 /* Login firebase */,
 				CE72596924EA3DA40084A0DD /* AppDelegate.swift */,
 				CE72596B24EA3DA40084A0DD /* SceneDelegate.swift */,
@@ -124,14 +168,11 @@
 				CE72596F24EA3DA40084A0DD /* Main.storyboard */,
 				CE8A4AD1250050E200DA9D86 /* DetailsVC.swift */,
 				CE04F49C24ECF8A700B80F86 /* popularVC.swift */,
-				CE04F48624ECCBD600B80F86 /* RecentCell.swift */,
 				CE72598324EBB8D10084A0DD /* LibraryVC.swift */,
 				CE72597224EA3DA70084A0DD /* Assets.xcassets */,
-				CE04F48824ECDDEA00B80F86 /* PopularCell.swift */,
 				CE72597424EA3DA70084A0DD /* LaunchScreen.storyboard */,
 				CEC41E0024F08AA6008C8135 /* GoogleService-Info.plist */,
 				CE72597724EA3DA70084A0DD /* Info.plist */,
-				CE72597F24EA96F60084A0DD /* HomeVC.swift */,
 				CE72598124EB91FC0084A0DD /* SelfSizedTableView.swift */,
 			);
 			path = diCo;
@@ -212,27 +253,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-diCo/Pods-diCo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-diCo/Pods-diCo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-diCo/Pods-diCo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-diCo/Pods-diCo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-diCo/Pods-diCo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2643843BB181711157D8A74A /* [CP] Check Pods Manifest.lock */ = {
@@ -265,14 +295,17 @@
 				CE72598024EA96F60084A0DD /* HomeVC.swift in Sources */,
 				CE04F48C24ECE48300B80F86 /* SignInVC.swift in Sources */,
 				CE72598424EBB8D10084A0DD /* LibraryVC.swift in Sources */,
+				77FBBB182598DA1800C570D6 /* MainDataManager.swift in Sources */,
 				CE72596A24EA3DA40084A0DD /* AppDelegate.swift in Sources */,
 				CE72598224EB91FC0084A0DD /* SelfSizedTableView.swift in Sources */,
+				77FBBB0F2598D9C600C570D6 /* FetchData.swift in Sources */,
 				CE04F49D24ECF8A700B80F86 /* popularVC.swift in Sources */,
 				CE04F48724ECCBD600B80F86 /* RecentCell.swift in Sources */,
 				CE72596C24EA3DA40084A0DD /* SceneDelegate.swift in Sources */,
 				CE04F49724ECE98C00B80F86 /* SignUpVC.swift in Sources */,
 				CE8A4AD2250050E200DA9D86 /* DetailsVC.swift in Sources */,
 				CE04F48924ECDDEA00B80F86 /* PopularCell.swift in Sources */,
+				77FBBB142598D9FF00C570D6 /* APIDataManager.swift in Sources */,
 				CE04F49324ECE66900B80F86 /* LodingViewIndicator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

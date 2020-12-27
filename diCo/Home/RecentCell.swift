@@ -12,28 +12,48 @@ class RecentCell: UICollectionViewCell {
     @IBOutlet weak var bacgroungColor: UIView!
     @IBOutlet weak var cellContentView: UIView!
     
+    @IBOutlet weak var title: UILabel!
+    
+    @IBOutlet weak var message: UILabel!
+    
+    var dict : MyDict!
+    
+    var delegate : TableViewDelegate?
     
     override func awakeFromNib() {
         
-        let colorRa = UIColor.random().darker(by: 5)
+        let colorRa = UIColor.random().darker(by: 15)
         
        // colorRa.darker(by: 30)
-        
+        // Modify UI(Decoration)
         self.bacgroungColor.backgroundColor =  colorRa
         self.bacgroungColor.layer.shadowColor =  colorRa?.cgColor
         
         self.bacgroungColor.layer.shadowOpacity = 0.6
         self.bacgroungColor.layer.shadowOffset = .init(width: 0, height: 0)
         self.bacgroungColor.layer.shadowRadius = 8
+        //End
+        
     }
+    func setMeaning(dictionary: MyDict)
+    {
+        dict = dictionary
+        title.text = dictionary.word
+    }
+    @IBAction func play_sound(_ sender: Any) {
+        delegate?.playSound(url: dict.audio)
+    }
+    
     
 }
 
+// Decoration ezo continuer
 extension CGFloat {
     static func random() -> CGFloat {
         return CGFloat(arc4random()) / CGFloat(UInt32.max)
     }
 }
+
 
 extension UIColor {
     static func random() -> UIColor {
@@ -69,3 +89,4 @@ extension UIColor {
     }
 }
 
+// Suka
