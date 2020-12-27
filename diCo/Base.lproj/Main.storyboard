@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ynp-0R-jcd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ynp-0R-jcd">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -784,6 +784,9 @@
                                                                         </imageView>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7c-ct-9cD">
                                                                             <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                            <connections>
+                                                                                <action selector="play_sound:" destination="tZg-03-kYA" eventType="touchUpInside" id="de5-TW-ffv"/>
+                                                                            </connections>
                                                                         </button>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="1" alpha="0.68717159849999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -850,6 +853,8 @@
                                                 <connections>
                                                     <outlet property="bacgroungColor" destination="GRD-eB-NdP" id="kaW-Ab-2hM"/>
                                                     <outlet property="cellContentView" destination="Q5v-tR-GuN" id="9CY-5w-UrU"/>
+                                                    <outlet property="message" destination="7lL-2X-TUk" id="9jL-cE-Vsw"/>
+                                                    <outlet property="title" destination="cTl-rc-ig8" id="4Vo-di-oh3"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -917,6 +922,9 @@
                                                                         </imageView>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrr-DX-s7H">
                                                                             <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                            <connections>
+                                                                                <action selector="play_sound:" destination="wdt-7b-BXv" eventType="touchUpInside" id="AUW-vw-ehU"/>
+                                                                            </connections>
                                                                         </button>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -971,6 +979,8 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="bacgroundImage" destination="6O9-K4-cQ1" id="Y8S-Jd-jUS"/>
+                                                    <outlet property="message" destination="rBe-Pj-4PZ" id="thP-9i-fmS"/>
+                                                    <outlet property="title" destination="fcP-YT-tUe" id="Ljb-eG-iem"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -1077,9 +1087,10 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="collectionView" destination="mlC-ds-OyO" id="r5a-fT-7bf"/>
                         <outlet property="searchField" destination="MjA-Xs-r5Z" id="ziL-Lc-jil"/>
-                        <outlet property="tableView" destination="cUp-os-kcS" id="XxQ-FC-28X"/>
-                        <outlet property="tableViewContraintHeight" destination="vRj-dI-GxR" id="31Y-fk-wg8"/>
+                        <outlet property="tableView" destination="cUp-os-kcS" id="pnB-8i-gka"/>
+                        <outlet property="tableViewContraintHeight" destination="vRj-dI-GxR" id="ODh-BN-uZ6"/>
                         <segue destination="ofj-5l-Sva" kind="presentation" identifier="toDetails2" id="Wzo-zD-Cgx"/>
                     </connections>
                 </viewController>
@@ -1893,30 +1904,6 @@
         <image name="multiply" catalog="system" width="128" height="111"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
-        <systemColor name="darkTextColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="darkTextColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="darkTextColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="darkTextColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="darkTextColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="darkTextColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="darkTextColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="darkTextColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="darkTextColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
