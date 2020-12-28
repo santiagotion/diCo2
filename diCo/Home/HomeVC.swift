@@ -115,22 +115,19 @@ class HomeVC: UIViewController,  UICollectionViewDataSource, UICollectionViewDel
     
     // Populate collection view
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        DataHolder.dict_data.count
+        1
     }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return DataHolder.dict_data.count
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell1", for: indexPath) as! RecentCell
         cell.setMeaning(dictionary: DataHolder.dict_data[indexPath.row])
         cell.delegate = self
         return cell
-  
-      
     }
     
     
@@ -184,27 +181,6 @@ class HomeVC: UIViewController,  UICollectionViewDataSource, UICollectionViewDel
 
 extension HomeVC: TableViewDelegate{
     func playSound(url: String) {
-        //print(url)
-        guard let c_url = URL(string: url) else { return}
-        downloadFileFromURL(url: c_url)
-    }
-    func downloadFileFromURL(url: URL){
-        var downloadTask:URLSessionDownloadTask
-        downloadTask = URLSession.shared.downloadTask(with: url) { (url, response, error) in
-            self.play(url: url!)
-        }
-        downloadTask.resume()
-    }
-    func play(url:URL) {
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: url as URL)
-            audioPlayer.prepareToPlay()
-            audioPlayer.volume = 2.0
-            audioPlayer.play()
-        } catch let error as NSError {
-            print(error.localizedDescription)
-        } catch {
-            print("AVAudioPlayer init failed")
-        }
+        PlaySound.playSound(url: url)
     }
 }

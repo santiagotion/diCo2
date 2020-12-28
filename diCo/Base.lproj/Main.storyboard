@@ -1510,7 +1510,7 @@
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="definitionCell" rowHeight="143" id="eFn-R5-nd1">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="definitionCell" rowHeight="143" id="eFn-R5-nd1" customClass="definitionCell" customModule="diCo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="143"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eFn-R5-nd1" id="j1R-06-8V9">
@@ -1588,6 +1588,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="definition" destination="6gI-KP-BA2" id="jap-Ib-3Oi"/>
+                                            <outlet property="example" destination="Bk4-fi-5zO" id="HaB-Zn-3xp"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -1633,6 +1637,10 @@
                     <navigationItem key="navigationItem" id="YoF-tg-1PJ"/>
                     <connections>
                         <outlet property="collectionView" destination="m9c-wL-zg2" id="hXw-F1-3Ym"/>
+                        <outlet property="defTableView" destination="Pwg-no-7CL" id="faP-j7-jKe"/>
+                        <outlet property="pageTitle" destination="6bv-Nr-oc8" id="uT9-Dr-PF4"/>
+                        <outlet property="partOfSpeech" destination="9e4-ee-K8W" id="W78-hc-JqN"/>
+                        <outlet property="playImageView" destination="KK7-QC-Hdp" id="4HH-tN-9vD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9jU-1c-JbA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

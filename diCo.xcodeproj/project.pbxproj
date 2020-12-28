@@ -12,6 +12,8 @@
 		77FBBB142598D9FF00C570D6 /* APIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FBBB132598D9FF00C570D6 /* APIDataManager.swift */; };
 		77FBBB182598DA1800C570D6 /* MainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FBBB172598DA1800C570D6 /* MainDataManager.swift */; };
 		77FBBB5325993BE300C570D6 /* synonymCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FBBB5225993BE300C570D6 /* synonymCellCollectionViewCell.swift */; };
+		77FBBB7B259A22CC00C570D6 /* definitionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FBBB7A259A22CC00C570D6 /* definitionCell.swift */; };
+		77FBBB7E259A326400C570D6 /* PlaySound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FBBB7D259A326400C570D6 /* PlaySound.swift */; };
 		CE04F48724ECCBD600B80F86 /* RecentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F48624ECCBD600B80F86 /* RecentCell.swift */; };
 		CE04F48924ECDDEA00B80F86 /* PopularCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F48824ECDDEA00B80F86 /* PopularCell.swift */; };
 		CE04F48C24ECE48300B80F86 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F48B24ECE48300B80F86 /* SignInVC.swift */; };
@@ -38,6 +40,8 @@
 		77FBBB132598D9FF00C570D6 /* APIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIDataManager.swift; sourceTree = "<group>"; };
 		77FBBB172598DA1800C570D6 /* MainDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainDataManager.swift; sourceTree = "<group>"; };
 		77FBBB5225993BE300C570D6 /* synonymCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = synonymCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		77FBBB7A259A22CC00C570D6 /* definitionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = definitionCell.swift; sourceTree = "<group>"; };
+		77FBBB7D259A326400C570D6 /* PlaySound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySound.swift; sourceTree = "<group>"; };
 		92B7B32440C33B3AA89AA549 /* Pods_diCo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_diCo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA91FCA82B12E4A29D3E12E /* Pods-diCo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-diCo.release.xcconfig"; path = "Pods/Target Support Files/Pods-diCo/Pods-diCo.release.xcconfig"; sourceTree = "<group>"; };
 		CE04F48624ECCBD600B80F86 /* RecentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentCell.swift; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				77FBBB0E2598D9C600C570D6 /* FetchData.swift */,
+				77FBBB7D259A326400C570D6 /* PlaySound.swift */,
 			);
 			path = "Universal Use";
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 			children = (
 				CE8A4AD1250050E200DA9D86 /* DetailsVC.swift */,
 				77FBBB5225993BE300C570D6 /* synonymCellCollectionViewCell.swift */,
+				77FBBB7A259A22CC00C570D6 /* definitionCell.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -306,6 +312,7 @@
 				CE72598024EA96F60084A0DD /* HomeVC.swift in Sources */,
 				CE04F48C24ECE48300B80F86 /* SignInVC.swift in Sources */,
 				CE72598424EBB8D10084A0DD /* LibraryVC.swift in Sources */,
+				77FBBB7E259A326400C570D6 /* PlaySound.swift in Sources */,
 				77FBBB182598DA1800C570D6 /* MainDataManager.swift in Sources */,
 				CE72596A24EA3DA40084A0DD /* AppDelegate.swift in Sources */,
 				CE72598224EB91FC0084A0DD /* SelfSizedTableView.swift in Sources */,
@@ -319,6 +326,7 @@
 				CE04F48924ECDDEA00B80F86 /* PopularCell.swift in Sources */,
 				77FBBB142598D9FF00C570D6 /* APIDataManager.swift in Sources */,
 				CE04F49324ECE66900B80F86 /* LodingViewIndicator.swift in Sources */,
+				77FBBB7B259A22CC00C570D6 /* definitionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
