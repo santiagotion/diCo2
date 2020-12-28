@@ -125,9 +125,17 @@ struct MMeaning {
         }else {
             self.partOfSpeech = "Empty"
         }
-        if let synonyms = json["Synonyms"] as? [String] {
-            self.synonyms = synonyms
+        if let synonyms = json["Synonyms"] as? [Any] {
+            var t_synonyms: [String] = []
+            for ele in synonyms {
+                if let pot_synonym = ele as? String {
+                    t_synonyms.append(pot_synonym)
+                    print(pot_synonym)
+                }
+            }
+            self.synonyms = t_synonyms
         }else {
+            //print("Not being called")
             self.synonyms = []
         }
         if let j_definitions = json["Definitions"] as? [Any] {

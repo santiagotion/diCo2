@@ -1404,7 +1404,7 @@
                                             <inset key="sectionInset" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="synonymsCell" id="quC-s7-Mmt">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="synonymsCell" id="quC-s7-Mmt" customClass="synonymCellCollectionViewCell" customModule="diCo" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="9" width="104" height="37"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cg4-Vo-PIH">
@@ -1444,6 +1444,9 @@
                                                 </collectionViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <size key="customSize" width="104" height="37"/>
+                                                <connections>
+                                                    <outlet property="title" destination="kCH-XV-rlW" id="V3s-On-AF0"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                         <connections>
@@ -1628,6 +1631,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YoF-tg-1PJ"/>
+                    <connections>
+                        <outlet property="collectionView" destination="m9c-wL-zg2" id="hXw-F1-3Ym"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9jU-1c-JbA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

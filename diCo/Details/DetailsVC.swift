@@ -10,29 +10,35 @@ import UIKit
 
 class DetailsVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var selectedWord : Word!
+    var synonyms: [String]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        collectionView.dataSource = self
+        synonyms = selectedWord.meanings[0].synonyms
+    
     }
     
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return selectedWord.meanings[0].synonyms.count
+        print(synonyms.count)
+        return synonyms.count
       }
       
       
-      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-          return selectedWord.meanings[0].synonyms.count
-      }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return synonyms.count
+    }
       
-      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
           
-          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "synonymsCell", for: indexPath)
-          
-          return cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "synonymsCell", for: indexPath) as! synonymCellCollectionViewCell
+        cell.setTitle(my_title: synonyms[indexPath.row])
+        return cell
     
         
       }
