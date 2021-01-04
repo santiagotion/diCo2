@@ -103,7 +103,6 @@ class HomeVC: UIViewController,  UICollectionViewDataSource, UICollectionViewDel
                 let newSize = newvalue as! CGSize
                 self.tableViewContraintHeight.constant = newSize.height
             }
-            
         }
     }
     
@@ -160,7 +159,7 @@ class HomeVC: UIViewController,  UICollectionViewDataSource, UICollectionViewDel
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         wordToPass = DataHolder.dict_data[indexPath.item]
         self.performSegue(withIdentifier: "toDetails2", sender: indexPath)
-        
+        //print("Being selected")
     }
     
     

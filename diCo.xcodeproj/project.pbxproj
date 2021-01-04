@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		15B1A70D76995B2304D4F5ED /* Pods_diCo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B7B32440C33B3AA89AA549 /* Pods_diCo.framework */; };
+		7759465425A14036002E0A4E /* PLibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7759465325A14036002E0A4E /* PLibraryCell.swift */; };
 		77FBBB0F2598D9C600C570D6 /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FBBB0E2598D9C600C570D6 /* FetchData.swift */; };
 		77FBBB142598D9FF00C570D6 /* APIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FBBB132598D9FF00C570D6 /* APIDataManager.swift */; };
 		77FBBB182598DA1800C570D6 /* MainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FBBB172598DA1800C570D6 /* MainDataManager.swift */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		503E2364936E766B05C8AE66 /* Pods-diCo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-diCo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-diCo/Pods-diCo.debug.xcconfig"; sourceTree = "<group>"; };
+		7759465325A14036002E0A4E /* PLibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLibraryCell.swift; sourceTree = "<group>"; };
 		77FBBB0E2598D9C600C570D6 /* FetchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchData.swift; sourceTree = "<group>"; };
 		77FBBB132598D9FF00C570D6 /* APIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIDataManager.swift; sourceTree = "<group>"; };
 		77FBBB172598DA1800C570D6 /* MainDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainDataManager.swift; sourceTree = "<group>"; };
@@ -79,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7759465225A13F5F002E0A4E /* Popular */ = {
+			isa = PBXGroup;
+			children = (
+				7759465325A14036002E0A4E /* PLibraryCell.swift */,
+			);
+			path = Popular;
+			sourceTree = "<group>";
+		};
 		77FBBB0D2598D9B300C570D6 /* Universal Use */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +186,7 @@
 		CE72596824EA3DA40084A0DD /* diCo */ = {
 			isa = PBXGroup;
 			children = (
+				7759465225A13F5F002E0A4E /* Popular */,
 				77FBBB512599387E00C570D6 /* Details */,
 				77FBBB112598D9E000C570D6 /* Home */,
 				77FBBB0D2598D9B300C570D6 /* Universal Use */,
@@ -317,6 +328,7 @@
 				CE72596A24EA3DA40084A0DD /* AppDelegate.swift in Sources */,
 				CE72598224EB91FC0084A0DD /* SelfSizedTableView.swift in Sources */,
 				77FBBB0F2598D9C600C570D6 /* FetchData.swift in Sources */,
+				7759465425A14036002E0A4E /* PLibraryCell.swift in Sources */,
 				CE04F49D24ECF8A700B80F86 /* popularVC.swift in Sources */,
 				CE04F48724ECCBD600B80F86 /* RecentCell.swift in Sources */,
 				CE72596C24EA3DA40084A0DD /* SceneDelegate.swift in Sources */,
@@ -472,7 +484,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DGTX6666TQ;
+				DEVELOPMENT_TEAM = 578F48F783;
 				INFOPLIST_FILE = diCo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -492,7 +504,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DGTX6666TQ;
+				DEVELOPMENT_TEAM = 578F48F783;
 				INFOPLIST_FILE = diCo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
