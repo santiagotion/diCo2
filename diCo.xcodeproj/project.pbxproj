@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		15B1A70D76995B2304D4F5ED /* Pods_diCo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B7B32440C33B3AA89AA549 /* Pods_diCo.framework */; };
+		77027BF425A8BD3000D2B8E6 /* LibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77027BF325A8BD3000D2B8E6 /* LibraryCell.swift */; };
 		7759465425A14036002E0A4E /* PLibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7759465325A14036002E0A4E /* PLibraryCell.swift */; };
 		77FBBB0F2598D9C600C570D6 /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FBBB0E2598D9C600C570D6 /* FetchData.swift */; };
 		77FBBB142598D9FF00C570D6 /* APIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FBBB132598D9FF00C570D6 /* APIDataManager.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		503E2364936E766B05C8AE66 /* Pods-diCo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-diCo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-diCo/Pods-diCo.debug.xcconfig"; sourceTree = "<group>"; };
+		77027BF325A8BD3000D2B8E6 /* LibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCell.swift; sourceTree = "<group>"; };
 		7759465325A14036002E0A4E /* PLibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLibraryCell.swift; sourceTree = "<group>"; };
 		77FBBB0E2598D9C600C570D6 /* FetchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchData.swift; sourceTree = "<group>"; };
 		77FBBB132598D9FF00C570D6 /* APIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIDataManager.swift; sourceTree = "<group>"; };
@@ -85,8 +87,16 @@
 			isa = PBXGroup;
 			children = (
 				7759465325A14036002E0A4E /* PLibraryCell.swift */,
+				CE04F49C24ECF8A700B80F86 /* popularVC.swift */,
 			);
 			path = Popular;
+			sourceTree = "<group>";
+		};
+		7759465725A2E2C4002E0A4E /* Library */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 		77FBBB0D2598D9B300C570D6 /* Universal Use */ = {
@@ -186,6 +196,7 @@
 		CE72596824EA3DA40084A0DD /* diCo */ = {
 			isa = PBXGroup;
 			children = (
+				7759465725A2E2C4002E0A4E /* Library */,
 				7759465225A13F5F002E0A4E /* Popular */,
 				77FBBB512599387E00C570D6 /* Details */,
 				77FBBB112598D9E000C570D6 /* Home */,
@@ -195,13 +206,13 @@
 				CE72596B24EA3DA40084A0DD /* SceneDelegate.swift */,
 				CE72596D24EA3DA40084A0DD /* WelcomeVC.swift */,
 				CE72596F24EA3DA40084A0DD /* Main.storyboard */,
-				CE04F49C24ECF8A700B80F86 /* popularVC.swift */,
 				CE72598324EBB8D10084A0DD /* LibraryVC.swift */,
 				CE72597224EA3DA70084A0DD /* Assets.xcassets */,
 				CE72597424EA3DA70084A0DD /* LaunchScreen.storyboard */,
 				CEC41E0024F08AA6008C8135 /* GoogleService-Info.plist */,
 				CE72597724EA3DA70084A0DD /* Info.plist */,
 				CE72598124EB91FC0084A0DD /* SelfSizedTableView.swift */,
+				77027BF325A8BD3000D2B8E6 /* LibraryCell.swift */,
 			);
 			path = diCo;
 			sourceTree = "<group>";
@@ -319,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE72596E24EA3DA40084A0DD /* WelcomeVC.swift in Sources */,
+				77027BF425A8BD3000D2B8E6 /* LibraryCell.swift in Sources */,
 				CE04F48E24ECE52B00B80F86 /* ErrorsHandling.swift in Sources */,
 				CE72598024EA96F60084A0DD /* HomeVC.swift in Sources */,
 				CE04F48C24ECE48300B80F86 /* SignInVC.swift in Sources */,

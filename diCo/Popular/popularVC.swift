@@ -16,7 +16,7 @@ class popularVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        //Do any additional setup after loading the view.
         tableView.delegate = self
     }
     
@@ -33,7 +33,6 @@ class popularVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Being selected")
         wordToPass = DataHolder.dict_data[indexPath.item]
         self.performSegue(withIdentifier: "todetails3", sender: indexPath)
     }
@@ -47,7 +46,6 @@ class popularVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         }
     }
 }
-
 extension popularVC: TableViewDelegate{
     func playSound(url: String) {
         PlaySound.playSound(url: url)

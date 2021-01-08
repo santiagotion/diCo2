@@ -10,41 +10,51 @@ import UIKit
 
 class LibraryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var searchField: UITextField!
+    @IBOutlet weak var tableView: UITableView!
+    
+    var wordToPass: Word!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if #available(iOS 13.0, *) {
             searchField.overrideUserInterfaceStyle = .light
-           
-           
         }
-        
+        tableView.delegate = self
         // Do any additional setup after loading the view.
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        wordToPass = DataHolder.dict_data[indexPath.item]
         self.performSegue(withIdentifier: "toDetails1", sender: indexPath)
-        
-        print("Hello Santi, this is Nathan from heaven. Because I don't care hejbsbcd hvjdv")
-        print("Franchement copding sucks,there is nothing fun, please there is one fun thing and we all know about. That's how we came around")
-        
-        print("Hello Santi, this is Nathan from heaven. Because I don't care hejbsbcd hvjdv")
-        print("ljetngkeamlgjnaehrngpowjkmnrGKHNwpkrgmnojqejrgljnearpogjaewlpjkRMGNJKHAEJRPGKMNwkhrgnlkaerjgnjnjck;sdjrgnchejmrfo;jwnhkFBJ")
+        tableView.delegate = self
         
     }
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 50
+        return DataHolder.dict_data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "popularCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "popularCell", for: indexPath) as! LibraryCell
+        cell.setMeaning(dictionary: DataHolder.dict_data[indexPath.row])
+        cell.delegate = self
         return cell
-        
     }
-    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+       return UITableView.automaticDimension
+   }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detailViewController = segue.destination as? DetailsVC {
+            detailViewController.selectedWord = wordToPass
+        }
+    }
+}
 
+extension LibraryVC: TableViewDelegate{
+    func playSound(url: String) {
+        PlaySound.playSound(url: url)
+    }
 }
