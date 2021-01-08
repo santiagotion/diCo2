@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		15B1A70D76995B2304D4F5ED /* Pods_diCo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B7B32440C33B3AA89AA549 /* Pods_diCo.framework */; };
 		77027BF425A8BD3000D2B8E6 /* LibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77027BF325A8BD3000D2B8E6 /* LibraryCell.swift */; };
+		77027BF825A8C0E100D2B8E6 /* ClassifyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77027BF725A8C0E100D2B8E6 /* ClassifyData.swift */; };
 		7759465425A14036002E0A4E /* PLibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7759465325A14036002E0A4E /* PLibraryCell.swift */; };
 		77FBBB0F2598D9C600C570D6 /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FBBB0E2598D9C600C570D6 /* FetchData.swift */; };
 		77FBBB142598D9FF00C570D6 /* APIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FBBB132598D9FF00C570D6 /* APIDataManager.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		503E2364936E766B05C8AE66 /* Pods-diCo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-diCo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-diCo/Pods-diCo.debug.xcconfig"; sourceTree = "<group>"; };
 		77027BF325A8BD3000D2B8E6 /* LibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCell.swift; sourceTree = "<group>"; };
+		77027BF725A8C0E100D2B8E6 /* ClassifyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifyData.swift; sourceTree = "<group>"; };
 		7759465325A14036002E0A4E /* PLibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLibraryCell.swift; sourceTree = "<group>"; };
 		77FBBB0E2598D9C600C570D6 /* FetchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchData.swift; sourceTree = "<group>"; };
 		77FBBB132598D9FF00C570D6 /* APIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIDataManager.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				77FBBB0E2598D9C600C570D6 /* FetchData.swift */,
 				77FBBB7D259A326400C570D6 /* PlaySound.swift */,
+				77027BF725A8C0E100D2B8E6 /* ClassifyData.swift */,
 			);
 			path = "Universal Use";
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				CE72598024EA96F60084A0DD /* HomeVC.swift in Sources */,
 				CE04F48C24ECE48300B80F86 /* SignInVC.swift in Sources */,
 				CE72598424EBB8D10084A0DD /* LibraryVC.swift in Sources */,
+				77027BF825A8C0E100D2B8E6 /* ClassifyData.swift in Sources */,
 				77FBBB7E259A326400C570D6 /* PlaySound.swift in Sources */,
 				77FBBB182598DA1800C570D6 /* MainDataManager.swift in Sources */,
 				CE72596A24EA3DA40084A0DD /* AppDelegate.swift in Sources */,

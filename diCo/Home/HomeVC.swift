@@ -31,6 +31,8 @@ class HomeVC: UIViewController,  UICollectionViewDataSource, UICollectionViewDel
     
     var data = [String]()
     //var dict_data = [MyDict]()
+    var recent_ele : [Word]!
+    
     var meaningData = [Meanings]()
     
     //var wordToPass : Class!
@@ -82,9 +84,11 @@ class HomeVC: UIViewController,  UICollectionViewDataSource, UICollectionViewDel
             }
             let General_word = Word(word: t_word, audio: t_audio, date: date, frequency: frequency, json: meanings)
             DataHolder.dict_data.append(General_word)
+            //self.recent_ele.append(General_word)
             self.tableView.reloadData()
             self.collectionView.reloadData()
         })
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -120,18 +124,19 @@ class HomeVC: UIViewController,  UICollectionViewDataSource, UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return DataHolder.dict_data.count
+        //return recent_ele.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell1", for: indexPath) as! RecentCell
-        cell.setMeaning(dictionary: DataHolder.dict_data[indexPath.row])
+        cell.setMeaning(dictionary: DataHolder.dict_data.sorted(by: {$0.date > $1.date})[indexPath.row])
         cell.delegate = self
         return cell
     }
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        wordToPass = DataHolder.dict_data[indexPath.item]
+        wordToPass = DataHolder.dict_data.sorted(by: {$0.date > $1.date})[indexPath.item]
         self.performSegue(withIdentifier: "toDetails2", sender: indexPath)
     }
     
@@ -151,13 +156,13 @@ class HomeVC: UIViewController,  UICollectionViewDataSource, UICollectionViewDel
        
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "popularCell", for: indexPath) as! PopularCell
-        cell.setMeaning(dictionary: DataHolder.dict_data[indexPath.row])
+        cell.setMeaning(dictionary: DataHolder.dict_data.sorted(by: {$0.frequency > $1.frequency})[indexPath.row])
         cell.delegate = self
         return cell
            
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        wordToPass = DataHolder.dict_data[indexPath.item]
+        wordToPass = DataHolder.dict_data.sorted(by: {$0.frequency > $1.frequency})[indexPath.item]
         self.performSegue(withIdentifier: "toDetails2", sender: indexPath)
         //print("Being selected")
     }

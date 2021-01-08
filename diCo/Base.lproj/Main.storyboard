@@ -1269,26 +1269,22 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="2"/>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ggQ-PF-Awx">
-                                        <rect key="frame" x="49" y="8" width="317" height="34"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="textColor" systemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" keyboardAppearance="light" textContentType="name"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="3"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="qiG-q0-UKi">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="sap-aJ-0So"/>
+                                        </constraints>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
                                 </subviews>
                                 <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="ggQ-PF-Awx" firstAttribute="leading" secondItem="Fhs-ll-ncb" secondAttribute="trailing" constant="8" id="As4-fd-NOs"/>
                                     <constraint firstItem="Fhs-ll-ncb" firstAttribute="leading" secondItem="Hfg-Fn-z5M" secondAttribute="leading" constant="20" id="EVO-5b-uwW"/>
-                                    <constraint firstItem="ggQ-PF-Awx" firstAttribute="top" secondItem="Hfg-Fn-z5M" secondAttribute="top" constant="8" id="P9H-M6-rb1"/>
+                                    <constraint firstItem="qiG-q0-UKi" firstAttribute="leading" secondItem="Hfg-Fn-z5M" secondAttribute="leading" id="Jd2-dN-vtJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="qiG-q0-UKi" secondAttribute="trailing" id="Rxc-Yu-9V2"/>
                                     <constraint firstAttribute="height" constant="50" id="Ubk-ar-LvS"/>
                                     <constraint firstItem="Fhs-ll-ncb" firstAttribute="centerY" secondItem="Hfg-Fn-z5M" secondAttribute="centerY" id="V1t-cn-nhF"/>
-                                    <constraint firstAttribute="bottom" secondItem="ggQ-PF-Awx" secondAttribute="bottom" constant="8" id="pK9-qe-C9L"/>
-                                    <constraint firstAttribute="trailing" secondItem="ggQ-PF-Awx" secondAttribute="trailing" constant="8" id="rWK-62-pgY"/>
+                                    <constraint firstAttribute="bottom" secondItem="qiG-q0-UKi" secondAttribute="bottom" id="YV7-z1-3uV"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1338,7 +1334,6 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <outlet property="searchField" destination="ggQ-PF-Awx" id="vqH-kc-Lk4"/>
                         <outlet property="tableView" destination="Tx0-78-qbc" id="2Ra-xD-nnh"/>
                         <segue destination="ofj-5l-Sva" kind="presentation" identifier="toDetails1" id="Gdu-S4-aW5"/>
                     </connections>

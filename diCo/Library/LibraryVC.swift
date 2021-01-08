@@ -9,7 +9,7 @@
 import UIKit
 
 class LibraryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet weak var searchField: UITextField!
+    
     @IBOutlet weak var tableView: UITableView!
     
     var wordToPass: Word!
@@ -18,7 +18,7 @@ class LibraryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         super.viewDidLoad()
         
         if #available(iOS 13.0, *) {
-            searchField.overrideUserInterfaceStyle = .light
+            // searchField.overrideUserInterfaceStyle = .light
         }
         tableView.delegate = self
         // Do any additional setup after loading the view.

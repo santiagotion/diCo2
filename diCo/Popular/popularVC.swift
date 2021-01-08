@@ -28,12 +28,12 @@ class popularVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "popularCell", for: indexPath) as! PLibraryCell
-        cell.setMeaning(dictionary: DataHolder.dict_data[indexPath.row])
+        cell.setMeaning(dictionary: DataHolder.dict_data.sorted(by: {$0.frequency > $1.frequency})[indexPath.row])
         cell.delegate = self
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        wordToPass = DataHolder.dict_data[indexPath.item]
+        wordToPass = DataHolder.dict_data.sorted(by: {$0.frequency > $1.frequency})[indexPath.item]
         self.performSegue(withIdentifier: "todetails3", sender: indexPath)
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
