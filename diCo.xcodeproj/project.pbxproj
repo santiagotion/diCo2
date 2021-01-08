@@ -95,6 +95,8 @@
 		7759465725A2E2C4002E0A4E /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				CE72598324EBB8D10084A0DD /* LibraryVC.swift */,
+				77027BF325A8BD3000D2B8E6 /* LibraryCell.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -206,13 +208,11 @@
 				CE72596B24EA3DA40084A0DD /* SceneDelegate.swift */,
 				CE72596D24EA3DA40084A0DD /* WelcomeVC.swift */,
 				CE72596F24EA3DA40084A0DD /* Main.storyboard */,
-				CE72598324EBB8D10084A0DD /* LibraryVC.swift */,
 				CE72597224EA3DA70084A0DD /* Assets.xcassets */,
 				CE72597424EA3DA70084A0DD /* LaunchScreen.storyboard */,
 				CEC41E0024F08AA6008C8135 /* GoogleService-Info.plist */,
 				CE72597724EA3DA70084A0DD /* Info.plist */,
 				CE72598124EB91FC0084A0DD /* SelfSizedTableView.swift */,
-				77027BF325A8BD3000D2B8E6 /* LibraryCell.swift */,
 			);
 			path = diCo;
 			sourceTree = "<group>";
