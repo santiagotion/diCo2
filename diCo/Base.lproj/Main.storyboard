@@ -1122,8 +1122,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Umh-Cf-pMq">
+                                <rect key="frame" x="20" y="110.5" width="374" height="50"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9m5-sK-Mo4">
+                                        <rect key="frame" x="20" y="16" width="21" height="18"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="19.5" id="G0e-Yc-Bdx"/>
+                                            <constraint firstAttribute="width" constant="21" id="sLn-lf-WUu"/>
+                                        </constraints>
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="2"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="lCp-CY-hTk">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="lCp-CY-hTk" firstAttribute="leading" secondItem="Umh-Cf-pMq" secondAttribute="leading" id="EFZ-Jz-iup"/>
+                                    <constraint firstItem="lCp-CY-hTk" firstAttribute="top" secondItem="Umh-Cf-pMq" secondAttribute="top" id="FkH-f3-hg4"/>
+                                    <constraint firstItem="9m5-sK-Mo4" firstAttribute="centerY" secondItem="Umh-Cf-pMq" secondAttribute="centerY" id="PSg-1N-JQI"/>
+                                    <constraint firstAttribute="bottom" secondItem="lCp-CY-hTk" secondAttribute="bottom" id="aLS-qB-Jb0"/>
+                                    <constraint firstItem="9m5-sK-Mo4" firstAttribute="leading" secondItem="Umh-Cf-pMq" secondAttribute="leading" constant="20" id="acm-tC-U5L"/>
+                                    <constraint firstAttribute="trailing" secondItem="lCp-CY-hTk" secondAttribute="trailing" id="gwc-no-mfF"/>
+                                    <constraint firstAttribute="height" constant="50" id="zPo-l4-4kp"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="1"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tx0-78-qbc">
-                                <rect key="frame" x="0.0" y="190.5" width="414" height="705.5"/>
+                                <rect key="frame" x="0.0" y="180.5" width="414" height="715.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -1254,45 +1291,6 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="4"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hfg-Fn-z5M">
-                                <rect key="frame" x="20" y="120.5" width="374" height="50"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Fhs-ll-ncb">
-                                        <rect key="frame" x="20" y="16" width="21" height="18"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="21" id="HUt-cl-9bY"/>
-                                            <constraint firstAttribute="height" constant="19.5" id="R08-T1-7gl"/>
-                                        </constraints>
-                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="2"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </imageView>
-                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="qiG-q0-UKi">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="sap-aJ-0So"/>
-                                        </constraints>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </searchBar>
-                                </subviews>
-                                <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="Fhs-ll-ncb" firstAttribute="leading" secondItem="Hfg-Fn-z5M" secondAttribute="leading" constant="20" id="EVO-5b-uwW"/>
-                                    <constraint firstItem="qiG-q0-UKi" firstAttribute="leading" secondItem="Hfg-Fn-z5M" secondAttribute="leading" id="Jd2-dN-vtJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="qiG-q0-UKi" secondAttribute="trailing" id="Rxc-Yu-9V2"/>
-                                    <constraint firstAttribute="height" constant="50" id="Ubk-ar-LvS"/>
-                                    <constraint firstItem="Fhs-ll-ncb" firstAttribute="centerY" secondItem="Hfg-Fn-z5M" secondAttribute="centerY" id="V1t-cn-nhF"/>
-                                    <constraint firstAttribute="bottom" secondItem="qiG-q0-UKi" secondAttribute="bottom" id="YV7-z1-3uV"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="1"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAa-wC-Bel">
                                 <rect key="frame" x="367" y="69" width="27" height="26"/>
                                 <constraints>
@@ -1313,16 +1311,15 @@
                         <constraints>
                             <constraint firstItem="Tx0-78-qbc" firstAttribute="leading" secondItem="RN3-sa-g1U" secondAttribute="leading" id="4S4-0d-IZT"/>
                             <constraint firstItem="V4f-yg-Wcu" firstAttribute="top" secondItem="RN3-sa-g1U" secondAttribute="top" constant="20" id="6eD-m0-xlS"/>
-                            <constraint firstItem="Hfg-Fn-z5M" firstAttribute="top" secondItem="oAa-wC-Bel" secondAttribute="bottom" constant="25.5" id="6qK-qa-ahB"/>
+                            <constraint firstItem="RN3-sa-g1U" firstAttribute="trailing" secondItem="Umh-Cf-pMq" secondAttribute="trailing" constant="20" id="E2b-Zq-d9T"/>
+                            <constraint firstItem="Umh-Cf-pMq" firstAttribute="leading" secondItem="RN3-sa-g1U" secondAttribute="leading" constant="20" id="GOh-ZO-TFK"/>
+                            <constraint firstItem="Umh-Cf-pMq" firstAttribute="top" secondItem="V4f-yg-Wcu" secondAttribute="bottom" constant="10" id="Nia-9l-r83"/>
                             <constraint firstItem="Tx0-78-qbc" firstAttribute="trailing" secondItem="RN3-sa-g1U" secondAttribute="trailing" id="OTr-J4-fsO"/>
                             <constraint firstItem="oAa-wC-Bel" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="V4f-yg-Wcu" secondAttribute="trailing" constant="8" symbolic="YES" id="QM3-En-nOu"/>
                             <constraint firstItem="V4f-yg-Wcu" firstAttribute="leading" secondItem="RN3-sa-g1U" secondAttribute="leading" constant="20" id="TgX-kS-omb"/>
-                            <constraint firstItem="RN3-sa-g1U" firstAttribute="trailing" secondItem="Hfg-Fn-z5M" secondAttribute="trailing" constant="20" id="UeO-Fz-5W1"/>
                             <constraint firstAttribute="bottom" secondItem="Tx0-78-qbc" secondAttribute="bottom" id="XUA-qO-TtS"/>
-                            <constraint firstItem="Tx0-78-qbc" firstAttribute="top" secondItem="Hfg-Fn-z5M" secondAttribute="bottom" constant="20" id="Zgy-5n-9ab"/>
+                            <constraint firstItem="Tx0-78-qbc" firstAttribute="top" secondItem="Umh-Cf-pMq" secondAttribute="bottom" constant="20" id="anu-Pa-EDf"/>
                             <constraint firstItem="oAa-wC-Bel" firstAttribute="top" secondItem="RN3-sa-g1U" secondAttribute="top" constant="25" id="d5Z-nE-ehP"/>
-                            <constraint firstItem="Hfg-Fn-z5M" firstAttribute="top" secondItem="V4f-yg-Wcu" secondAttribute="bottom" constant="20" id="ery-nW-FhX"/>
-                            <constraint firstItem="Hfg-Fn-z5M" firstAttribute="leading" secondItem="RN3-sa-g1U" secondAttribute="leading" constant="20" id="sU8-nP-ToG"/>
                             <constraint firstItem="RN3-sa-g1U" firstAttribute="trailing" secondItem="oAa-wC-Bel" secondAttribute="trailing" constant="20" id="w0g-6b-OCJ"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -1334,6 +1331,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="searchBar" destination="lCp-CY-hTk" id="Hnl-JH-u2q"/>
                         <outlet property="tableView" destination="Tx0-78-qbc" id="2Ra-xD-nnh"/>
                         <segue destination="ofj-5l-Sva" kind="presentation" identifier="toDetails1" id="Gdu-S4-aW5"/>
                     </connections>
@@ -1844,26 +1842,20 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="2"/>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DtN-Kr-xzU">
-                                        <rect key="frame" x="49" y="8" width="317" height="34"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="textColor" systemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" keyboardAppearance="light" textContentType="name"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="3"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="sQj-bK-SMI">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
                                 </subviews>
                                 <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="gh8-bu-VIz" firstAttribute="centerY" secondItem="VVE-Mx-scz" secondAttribute="centerY" id="J4t-w4-FRT"/>
-                                    <constraint firstItem="DtN-Kr-xzU" firstAttribute="leading" secondItem="gh8-bu-VIz" secondAttribute="trailing" constant="8" id="Kue-Du-ayY"/>
-                                    <constraint firstAttribute="trailing" secondItem="DtN-Kr-xzU" secondAttribute="trailing" constant="8" id="OIj-p8-3df"/>
-                                    <constraint firstAttribute="bottom" secondItem="DtN-Kr-xzU" secondAttribute="bottom" constant="8" id="YVh-GD-6ZY"/>
-                                    <constraint firstItem="DtN-Kr-xzU" firstAttribute="top" secondItem="VVE-Mx-scz" secondAttribute="top" constant="8" id="Ydr-yC-z7h"/>
+                                    <constraint firstAttribute="trailing" secondItem="sQj-bK-SMI" secondAttribute="trailing" id="O2s-uE-vcT"/>
+                                    <constraint firstItem="sQj-bK-SMI" firstAttribute="leading" secondItem="VVE-Mx-scz" secondAttribute="leading" id="Qf3-nh-EqG"/>
                                     <constraint firstAttribute="height" constant="50" id="al6-oA-jFT"/>
+                                    <constraint firstItem="sQj-bK-SMI" firstAttribute="top" secondItem="VVE-Mx-scz" secondAttribute="top" id="cni-v3-sGl"/>
                                     <constraint firstItem="gh8-bu-VIz" firstAttribute="leading" secondItem="VVE-Mx-scz" secondAttribute="leading" constant="20" id="eyX-ng-80z"/>
+                                    <constraint firstAttribute="bottom" secondItem="sQj-bK-SMI" secondAttribute="bottom" id="hL2-zZ-tUd"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1898,6 +1890,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="searchBar" destination="sQj-bK-SMI" id="ZKb-J0-ywa"/>
                         <outlet property="tableView" destination="MEw-w7-ixm" id="Hkk-P7-xMV"/>
                         <segue destination="ofj-5l-Sva" kind="presentation" identifier="todetails3" id="9e3-XA-P37"/>
                     </connections>
@@ -1909,7 +1902,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="w20-ts-XJN"/>
-        <segue reference="Gdu-S4-aW5"/>
+        <segue reference="9e3-XA-P37"/>
         <segue reference="3bL-IO-l0Y"/>
         <segue reference="teg-88-mvv"/>
         <segue reference="sfD-dy-860"/>
