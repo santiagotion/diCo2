@@ -111,11 +111,6 @@ class HomeVC: UIViewController,  UICollectionViewDataSource, UICollectionViewDel
     }
     
     
-    
-    
-    
-    
-    
     // Populate collection view
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         1

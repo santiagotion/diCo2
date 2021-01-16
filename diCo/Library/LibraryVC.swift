@@ -14,7 +14,8 @@ class LibraryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
     
-    
+    @IBOutlet weak var searchOnLine: UIButton!
+    var wordToSearch: String!
     var wordToPass: Word!
     var isSearch: Bool = false
     let searchController = UISearchController(searchResultsController: nil)
@@ -27,6 +28,7 @@ class LibraryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             // searchField.overrideUserInterfaceStyle = .light
         }
         //self.myButton.isHidden = true
+        self.searchOnLine.isHidden = true
         tableView.delegate = self
         tableView.allowsSelectionDuringEditing = true
         tableView.allowsSelection = true
@@ -57,6 +59,12 @@ class LibraryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         //searchBar.showsCancelButton = true
 
     }
+    
+    @IBAction func SearchOnline(_ sender: Any) {
+        if wordToSearch != nil {
+            
+        }
+    }
     var isSearchBarEmpty: Bool {
         return searchController.searchBar.text?.isEmpty ?? true
     }
@@ -66,7 +74,9 @@ class LibraryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             return word.word.lowercased().contains(searchText.lowercased())
         }
         if filteredWords.count==0 {
-            //self.myButton.isHidden = false
+            self.searchOnLine.isHidden = false
+        }else {
+            self.searchOnLine.isHidden = true
         }
         tableView.reloadData()
     }
@@ -154,6 +164,9 @@ extension LibraryVC : UISearchBarDelegate{
         }else {
             isSearch = true
             filterContentForSearchText (searchText)
+        }
+        if (!self.searchOnLine.isHidden) {
+            wordToSearch = searchText
         }
     }
 }
