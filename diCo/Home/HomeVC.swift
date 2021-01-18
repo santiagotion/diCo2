@@ -35,14 +35,25 @@ class HomeVC: UIViewController,  UICollectionViewDataSource, UICollectionViewDel
     
     var meaningData = [Meanings]()
     
+    var totalWords = [String]()
+    
     //var wordToPass : Class!
     
    // var class = [Class]()
     
-    override func viewDidLoad() {
+    override func viewDidLoad(){
         super.viewDidLoad()
         if #available(iOS 13.0, *) {
             searchField.overrideUserInterfaceStyle = .light
+        }
+        do {
+            // get the documents folder url
+            let path = Bundle.main.path(forResource: "Words", ofType: "txt")
+            let string = try String(contentsOfFile: path!, encoding: String.Encoding.utf8)
+            //print(string)
+            totalWords = string.components(separatedBy: "\n")
+        } catch {
+            print("error:", error)
         }
         
         ref = Database.database().reference()
@@ -51,6 +62,13 @@ class HomeVC: UIViewController,  UICollectionViewDataSource, UICollectionViewDel
         //searchBar.delegate = self
         
         // Retrieve the post and listen for changes
+        
+        //for i in 1..<totalWords.count {
+            //Searcher.searchWordOnLine(totalWords[i].capitalized)
+        //}
+        //Searcher.searchWordOnLine(totalWords[0].capitalized)
+        
+        
         filteredData = data
         databaseHandle = ref?.observe(.childAdded, with: { (snapshot) in
             // Code to execute when a new word is added

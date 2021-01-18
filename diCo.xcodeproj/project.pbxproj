@@ -10,6 +10,8 @@
 		15B1A70D76995B2304D4F5ED /* Pods_diCo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B7B32440C33B3AA89AA549 /* Pods_diCo.framework */; };
 		77027BF425A8BD3000D2B8E6 /* LibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77027BF325A8BD3000D2B8E6 /* LibraryCell.swift */; };
 		77027BF825A8C0E100D2B8E6 /* ClassifyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77027BF725A8C0E100D2B8E6 /* ClassifyData.swift */; };
+		774CC72725B355E400F21657 /* SearchWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774CC72625B355E400F21657 /* SearchWord.swift */; };
+		774CC76125B4B5A900F21657 /* Words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 774CC76025B4B5A900F21657 /* Words.txt */; };
 		7759465425A14036002E0A4E /* PLibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7759465325A14036002E0A4E /* PLibraryCell.swift */; };
 		77FBBB0F2598D9C600C570D6 /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FBBB0E2598D9C600C570D6 /* FetchData.swift */; };
 		77FBBB142598D9FF00C570D6 /* APIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FBBB132598D9FF00C570D6 /* APIDataManager.swift */; };
@@ -41,6 +43,8 @@
 		503E2364936E766B05C8AE66 /* Pods-diCo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-diCo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-diCo/Pods-diCo.debug.xcconfig"; sourceTree = "<group>"; };
 		77027BF325A8BD3000D2B8E6 /* LibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCell.swift; sourceTree = "<group>"; };
 		77027BF725A8C0E100D2B8E6 /* ClassifyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifyData.swift; sourceTree = "<group>"; };
+		774CC72625B355E400F21657 /* SearchWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWord.swift; sourceTree = "<group>"; };
+		774CC76025B4B5A900F21657 /* Words.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Words.txt; sourceTree = "<group>"; };
 		7759465325A14036002E0A4E /* PLibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLibraryCell.swift; sourceTree = "<group>"; };
 		77FBBB0E2598D9C600C570D6 /* FetchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchData.swift; sourceTree = "<group>"; };
 		77FBBB132598D9FF00C570D6 /* APIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIDataManager.swift; sourceTree = "<group>"; };
@@ -85,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		774CC75F25B4B56500F21657 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				774CC76025B4B5A900F21657 /* Words.txt */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
 		7759465225A13F5F002E0A4E /* Popular */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +121,7 @@
 				77FBBB0E2598D9C600C570D6 /* FetchData.swift */,
 				77FBBB7D259A326400C570D6 /* PlaySound.swift */,
 				77027BF725A8C0E100D2B8E6 /* ClassifyData.swift */,
+				774CC72625B355E400F21657 /* SearchWord.swift */,
 			);
 			path = "Universal Use";
 			sourceTree = "<group>";
@@ -201,6 +214,7 @@
 		CE72596824EA3DA40084A0DD /* diCo */ = {
 			isa = PBXGroup;
 			children = (
+				774CC75F25B4B56500F21657 /* Files */,
 				7759465725A2E2C4002E0A4E /* Library */,
 				7759465225A13F5F002E0A4E /* Popular */,
 				77FBBB512599387E00C570D6 /* Details */,
@@ -280,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				774CC76125B4B5A900F21657 /* Words.txt in Resources */,
 				CE72597624EA3DA70084A0DD /* LaunchScreen.storyboard in Resources */,
 				CEC41E0124F08AA6008C8135 /* GoogleService-Info.plist in Resources */,
 				CE72597324EA3DA70084A0DD /* Assets.xcassets in Resources */,
@@ -345,6 +360,7 @@
 				CE72598224EB91FC0084A0DD /* SelfSizedTableView.swift in Sources */,
 				77FBBB0F2598D9C600C570D6 /* FetchData.swift in Sources */,
 				7759465425A14036002E0A4E /* PLibraryCell.swift in Sources */,
+				774CC72725B355E400F21657 /* SearchWord.swift in Sources */,
 				CE04F49D24ECF8A700B80F86 /* popularVC.swift in Sources */,
 				CE04F48724ECCBD600B80F86 /* RecentCell.swift in Sources */,
 				CE72596C24EA3DA40084A0DD /* SceneDelegate.swift in Sources */,

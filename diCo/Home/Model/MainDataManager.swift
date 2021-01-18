@@ -18,6 +18,7 @@ class MainDataManager {
      */
     let items:[String] = []
     
+    var wordFound: Bool!
     
     
     func numberOfItems() -> Int {
@@ -31,53 +32,63 @@ class MainDataManager {
     func getData(from url: String, completion: @escaping ([Meanings])->()){
         
         var definitions:[Meanings] = []
+        print("Start")
+        print(url)
         let task = URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: { data, response, error in
             
             guard let data = data, error == nil else{
                 
                 print("Something went wrong")
+                //Searcher.found = false
                 return
             }
-            
-            let json = try? JSONSerialization.jsonObject(with: data, options: [])
-            
-            if let j_array = json as? [Any]
-            {
-                print("Being Called")
-                for _array in j_array
-                {
-                    var audio = "";
-                    if let j_dictionary = _array as? [String:Any]
+            if let httpResponse = response as? HTTPURLResponse {
+                    //print("statusCode: \(httpResponse.statusCode)")
+                if (httpResponse.statusCode == 200) {
+                    Searcher.found = true
+                    let json = try? JSONSerialization.jsonObject(with: data, options: [])
+                    
+                    if let j_array = json as? [Any]
                     {
-                        if let phonetic = j_dictionary["phonetics"] as? [Any]
+                        for _array in j_array
                         {
-                            if let dict = phonetic[0] as? [String:Any]
+                            var audio = "";
+                            if let j_dictionary = _array as? [String:Any]
                             {
-                                if let sound = dict["audio"] as? String
+                                if let phonetic = j_dictionary["phonetics"] as? [Any]
                                 {
-                                    audio = sound
-                                    print(audio)
-                                    //print("Being Called")
+                                    if phonetic.count > 0 {
+                                        if let dict = phonetic[0] as? [String:Any]
+                                        {
+                                            if let sound = dict["audio"] as? String
+                                            {
+                                                audio = sound
+                                            }
+                                        }
+                                    }
                                 }
-                            }
-                        }
-                        if let mean_ = j_dictionary["meanings"] as? [Any]
-                        {
-                            for mean in mean_
-                            {
-                                if let aa = mean as? [String:Any]
+                                if let mean_ = j_dictionary["meanings"] as? [Any]
                                 {
-                                    //print("Hello")
-                                    let definition = Meanings(json:aa,audio: audio)
-                                    //print(definition.partOfSpeech)
-                                    definitions.append(definition)
-                                    //print(definitions[0].partOfSpeech)
+                                    for mean in mean_
+                                    {
+                                        if let aa = mean as? [String:Any]
+                                        {
+                                            //print("Hello")
+                                            let definition = Meanings(json:aa,audio: audio)
+                                            //print(definition.partOfSpeech)
+                                            definitions.append(definition)
+                                            //print(definitions[0].partOfSpeech)
+                                        }
+                                    }
                                 }
                             }
                         }
                     }
+                }else {
+                    Searcher.found = false
                 }
             }
+            
             completion(definitions)
         })
         task.resume()

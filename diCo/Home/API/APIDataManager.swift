@@ -130,7 +130,7 @@ struct MMeaning {
             for ele in synonyms {
                 if let pot_synonym = ele as? String {
                     t_synonyms.append(pot_synonym)
-                    print(pot_synonym)
+                    //print(pot_synonym)
                 }
             }
             self.synonyms = t_synonyms
