@@ -12,6 +12,7 @@
 		77027BF825A8C0E100D2B8E6 /* ClassifyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77027BF725A8C0E100D2B8E6 /* ClassifyData.swift */; };
 		774CC72725B355E400F21657 /* SearchWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774CC72625B355E400F21657 /* SearchWord.swift */; };
 		774CC76125B4B5A900F21657 /* Words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 774CC76025B4B5A900F21657 /* Words.txt */; };
+		774CC77A25B546CE00F21657 /* AllWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 774CC77925B546CE00F21657 /* AllWords.txt */; };
 		7759465425A14036002E0A4E /* PLibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7759465325A14036002E0A4E /* PLibraryCell.swift */; };
 		77FBBB0F2598D9C600C570D6 /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FBBB0E2598D9C600C570D6 /* FetchData.swift */; };
 		77FBBB142598D9FF00C570D6 /* APIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FBBB132598D9FF00C570D6 /* APIDataManager.swift */; };
@@ -45,6 +46,7 @@
 		77027BF725A8C0E100D2B8E6 /* ClassifyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifyData.swift; sourceTree = "<group>"; };
 		774CC72625B355E400F21657 /* SearchWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWord.swift; sourceTree = "<group>"; };
 		774CC76025B4B5A900F21657 /* Words.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Words.txt; sourceTree = "<group>"; };
+		774CC77925B546CE00F21657 /* AllWords.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = AllWords.txt; sourceTree = "<group>"; };
 		7759465325A14036002E0A4E /* PLibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLibraryCell.swift; sourceTree = "<group>"; };
 		77FBBB0E2598D9C600C570D6 /* FetchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchData.swift; sourceTree = "<group>"; };
 		77FBBB132598D9FF00C570D6 /* APIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIDataManager.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				774CC76025B4B5A900F21657 /* Words.txt */,
+				774CC77925B546CE00F21657 /* AllWords.txt */,
 			);
 			path = Files;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				774CC77A25B546CE00F21657 /* AllWords.txt in Resources */,
 				774CC76125B4B5A900F21657 /* Words.txt in Resources */,
 				CE72597624EA3DA70084A0DD /* LaunchScreen.storyboard in Resources */,
 				CEC41E0124F08AA6008C8135 /* GoogleService-Info.plist in Resources */,

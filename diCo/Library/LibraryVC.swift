@@ -72,8 +72,10 @@ class LibraryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             
             if let found = Searcher.found {
                 if found {
-                    DataHolder.dict_data.removeAll()
-                    databaseHandle = ref?.observe(.childAdded, with: { (snapshot) in
+                    print("It's arriving!")
+    
+                    //DataHolder.dict_data.removeAll()
+                    databaseHandle = ref?.observe(.value, with: { (snapshot) in
                         // Code to execute when a new word is added
                         let w_snapshot = snapshot.childSnapshot(forPath: "Word")
                         let a_snapshot = snapshot.childSnapshot(forPath: "Audio")
@@ -108,7 +110,9 @@ class LibraryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                         //self.recent_ele.append(General_word)
                         //self.tableView.reloadData()
                         self.filterContentForSearchText(word!)
-                    })
+                    }) { (error) in
+                        print (error.localizedDescription)
+                    }
                     //filterContentForSearchText(word)
                 }
             }

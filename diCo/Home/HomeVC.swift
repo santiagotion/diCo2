@@ -46,15 +46,16 @@ class HomeVC: UIViewController,  UICollectionViewDataSource, UICollectionViewDel
         if #available(iOS 13.0, *) {
             searchField.overrideUserInterfaceStyle = .light
         }
-        do {
+        
+        //do {
             // get the documents folder url
-            let path = Bundle.main.path(forResource: "Words", ofType: "txt")
-            let string = try String(contentsOfFile: path!, encoding: String.Encoding.utf8)
+            //let path = Bundle.main.path(forResource: "AllWords", ofType: "txt")
+            //let string = try String(contentsOfFile: path!, encoding: String.Encoding.utf8)
             //print(string)
-            totalWords = string.components(separatedBy: "\n")
-        } catch {
-            print("error:", error)
-        }
+            //totalWords = string.components(separatedBy: "\n")
+        //} catch {
+            //print("error:", error)
+        //}
         
         ref = Database.database().reference()
         tableView.dataSource = self
@@ -64,7 +65,11 @@ class HomeVC: UIViewController,  UICollectionViewDataSource, UICollectionViewDel
         // Retrieve the post and listen for changes
         
         //for i in 1..<totalWords.count {
-            //Searcher.searchWordOnLine(totalWords[i].capitalized)
+            //let word = totalWords[i].capitalized
+            //if (!word.isEmpty) {
+                //Searcher.searchWordOnLine(word)
+            //}
+            
         //}
         //Searcher.searchWordOnLine(totalWords[0].capitalized)
         

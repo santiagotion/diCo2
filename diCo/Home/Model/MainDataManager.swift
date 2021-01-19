@@ -32,67 +32,70 @@ class MainDataManager {
     func getData(from url: String, completion: @escaping ([Meanings])->()){
         
         var definitions:[Meanings] = []
-        print("Start")
-        print(url)
-        let task = URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: { data, response, error in
-            
-            guard let data = data, error == nil else{
+        //print("Start")
+        //print(url)
+        if (URL(string: url) != nil) {
+            let task = URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: { data, response, error in
                 
-                print("Something went wrong")
-                //Searcher.found = false
-                return
-            }
-            if let httpResponse = response as? HTTPURLResponse {
-                    //print("statusCode: \(httpResponse.statusCode)")
-                if (httpResponse.statusCode == 200) {
-                    Searcher.found = true
-                    let json = try? JSONSerialization.jsonObject(with: data, options: [])
+                guard let data = data, error == nil else{
                     
-                    if let j_array = json as? [Any]
-                    {
-                        for _array in j_array
+                    print("Something went wrong")
+                    //Searcher.found = false
+                    return
+                }
+                if let httpResponse = response as? HTTPURLResponse {
+                        //print("statusCode: \(httpResponse.statusCode)")
+                    if (httpResponse.statusCode == 200) {
+                        Searcher.found = true
+                        let json = try? JSONSerialization.jsonObject(with: data, options: [])
+                        
+                        if let j_array = json as? [Any]
                         {
-                            var audio = "";
-                            if let j_dictionary = _array as? [String:Any]
+                            for _array in j_array
                             {
-                                if let phonetic = j_dictionary["phonetics"] as? [Any]
+                                var audio = "";
+                                if let j_dictionary = _array as? [String:Any]
                                 {
-                                    if phonetic.count > 0 {
-                                        if let dict = phonetic[0] as? [String:Any]
-                                        {
-                                            if let sound = dict["audio"] as? String
+                                    if let phonetic = j_dictionary["phonetics"] as? [Any]
+                                    {
+                                        if phonetic.count > 0 {
+                                            if let dict = phonetic[0] as? [String:Any]
                                             {
-                                                audio = sound
+                                                if let sound = dict["audio"] as? String
+                                                {
+                                                    audio = sound
+                                                }
                                             }
                                         }
                                     }
-                                }
-                                if let mean_ = j_dictionary["meanings"] as? [Any]
-                                {
-                                    for mean in mean_
+                                    if let mean_ = j_dictionary["meanings"] as? [Any]
                                     {
-                                        if let aa = mean as? [String:Any]
+                                        for mean in mean_
                                         {
-                                            //print("Hello")
-                                            let definition = Meanings(json:aa,audio: audio)
-                                            //print(definition.partOfSpeech)
-                                            definitions.append(definition)
-                                            //print(definitions[0].partOfSpeech)
+                                            if let aa = mean as? [String:Any]
+                                            {
+                                                //print("Hello")
+                                                let definition = Meanings(json:aa,audio: audio)
+                                                //print(definition.partOfSpeech)
+                                                definitions.append(definition)
+                                                //print(definitions[0].partOfSpeech)
+                                            }
                                         }
                                     }
                                 }
                             }
                         }
+                    }else {
+                        Searcher.found = false
                     }
-                }else {
-                    Searcher.found = false
                 }
-            }
-            
-            completion(definitions)
-        })
-        task.resume()
-        //return definitions
+                
+                completion(definitions)
+            })
+            task.resume()
+            //return definitions
+        }
+        
     }
     
 }
