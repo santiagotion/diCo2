@@ -58,12 +58,15 @@ PODS:
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.4.0)
   - Hero (1.5.0)
+  - Koloda (5.0.1):
+    - pop (~> 1.0)
   - leveldb-library (1.22)
   - nanopb (1.30905.0):
     - nanopb/decode (= 1.30905.0)
     - nanopb/encode (= 1.30905.0)
   - nanopb/decode (1.30905.0)
   - nanopb/encode (1.30905.0)
+  - pop (1.0.12)
   - PromisesObjC (1.2.9)
 
 DEPENDENCIES:
@@ -71,6 +74,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - Hero
+  - Koloda
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -90,6 +94,9 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+  trunk:
+    - Koloda
+    - pop
 
 SPEC CHECKSUMS:
   Firebase: 7cf5f9c67f03cb3b606d1d6535286e1080e57eb6
@@ -105,10 +112,12 @@ SPEC CHECKSUMS:
   GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
   Hero: b7385b75e7259da62f4f85462f59a5082d66b058
+  Koloda: d07b9199a383abc5898b62aa945a599f5e7c0c4b
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
 
-PODFILE CHECKSUM: f52e603306299fba64b5479c691d1a9da45127e4
+PODFILE CHECKSUM: c37a6f6b9114f725b6ed8bdddb9fcd63193cb446
 
 COCOAPODS: 1.10.0

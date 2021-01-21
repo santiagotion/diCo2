@@ -27,6 +27,8 @@
 		CE04F49324ECE66900B80F86 /* LodingViewIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F49224ECE66900B80F86 /* LodingViewIndicator.swift */; };
 		CE04F49724ECE98C00B80F86 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F49624ECE98C00B80F86 /* SignUpVC.swift */; };
 		CE04F49D24ECF8A700B80F86 /* popularVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F49C24ECF8A700B80F86 /* popularVC.swift */; };
+		CE3DE48225B9530700864D9F /* newHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DE48125B9530700864D9F /* newHomeVC.swift */; };
+		CE3DE48525B9662400864D9F /* CardLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DE48425B9662400864D9F /* CardLayoutAttributes.swift */; };
 		CE72596A24EA3DA40084A0DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72596924EA3DA40084A0DD /* AppDelegate.swift */; };
 		CE72596C24EA3DA40084A0DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72596B24EA3DA40084A0DD /* SceneDelegate.swift */; };
 		CE72596E24EA3DA40084A0DD /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72596D24EA3DA40084A0DD /* WelcomeVC.swift */; };
@@ -63,6 +65,8 @@
 		CE04F49224ECE66900B80F86 /* LodingViewIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LodingViewIndicator.swift; sourceTree = "<group>"; };
 		CE04F49624ECE98C00B80F86 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		CE04F49C24ECF8A700B80F86 /* popularVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popularVC.swift; sourceTree = "<group>"; };
+		CE3DE48125B9530700864D9F /* newHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newHomeVC.swift; sourceTree = "<group>"; };
+		CE3DE48425B9662400864D9F /* CardLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLayoutAttributes.swift; sourceTree = "<group>"; };
 		CE72596624EA3DA40084A0DD /* diCo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = diCo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE72596924EA3DA40084A0DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE72596B24EA3DA40084A0DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -228,6 +232,8 @@
 				CE72596B24EA3DA40084A0DD /* SceneDelegate.swift */,
 				CE72596D24EA3DA40084A0DD /* WelcomeVC.swift */,
 				CE72596F24EA3DA40084A0DD /* Main.storyboard */,
+				CE3DE48425B9662400864D9F /* CardLayoutAttributes.swift */,
+				CE3DE48125B9530700864D9F /* newHomeVC.swift */,
 				CE72597224EA3DA70084A0DD /* Assets.xcassets */,
 				CE72597424EA3DA70084A0DD /* LaunchScreen.storyboard */,
 				CEC41E0024F08AA6008C8135 /* GoogleService-Info.plist */,
@@ -351,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE3DE48225B9530700864D9F /* newHomeVC.swift in Sources */,
 				CE72596E24EA3DA40084A0DD /* WelcomeVC.swift in Sources */,
 				77027BF425A8BD3000D2B8E6 /* LibraryCell.swift in Sources */,
 				CE04F48E24ECE52B00B80F86 /* ErrorsHandling.swift in Sources */,
@@ -368,6 +375,7 @@
 				CE04F49D24ECF8A700B80F86 /* popularVC.swift in Sources */,
 				CE04F48724ECCBD600B80F86 /* RecentCell.swift in Sources */,
 				CE72596C24EA3DA40084A0DD /* SceneDelegate.swift in Sources */,
+				CE3DE48525B9662400864D9F /* CardLayoutAttributes.swift in Sources */,
 				CE04F49724ECE98C00B80F86 /* SignUpVC.swift in Sources */,
 				CE8A4AD2250050E200DA9D86 /* DetailsVC.swift in Sources */,
 				77FBBB5325993BE300C570D6 /* synonymCellCollectionViewCell.swift in Sources */,
@@ -520,7 +528,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 578F48F783;
+				DEVELOPMENT_TEAM = DGTX6666TQ;
 				INFOPLIST_FILE = diCo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -540,7 +548,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 578F48F783;
+				DEVELOPMENT_TEAM = DGTX6666TQ;
 				INFOPLIST_FILE = diCo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

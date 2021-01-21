@@ -26,7 +26,7 @@ class HomeVC: UIViewController,  UICollectionViewDataSource, UICollectionViewDel
     var audioPlayer:AVAudioPlayer!
 
     var ref:DatabaseReference?
-    var databaseHandle:DatabaseHandle?
+//    var databaseHandle:DatabaseHandle?
     var filteredData: [String]!
     
     var data = [String]()
@@ -57,6 +57,8 @@ class HomeVC: UIViewController,  UICollectionViewDataSource, UICollectionViewDel
             //print("error:", error)
         //}
         
+        dataObserVer()
+        
         ref = Database.database().reference()
         tableView.dataSource = self
         collectionView.dataSource = self
@@ -75,7 +77,7 @@ class HomeVC: UIViewController,  UICollectionViewDataSource, UICollectionViewDel
         
         
         filteredData = data
-        databaseHandle = ref?.observe(.childAdded, with: { (snapshot) in
+         ref?.observe(.childAdded, with: { snapshot in
             // Code to execute when a new word is added
             let w_snapshot = snapshot.childSnapshot(forPath: "Word")
             let a_snapshot = snapshot.childSnapshot(forPath: "Audio")
@@ -113,6 +115,40 @@ class HomeVC: UIViewController,  UICollectionViewDataSource, UICollectionViewDel
         })
         
     }
+    
+    
+    
+    func  dataObserVer(){
+        
+        ref?.observeSingleEvent(of: .childAdded, with: { snapshot in
+            
+            for child in snapshot.children {
+                
+                if let childSnapshot = child as? DataSnapshot,
+                   
+                   let dict = childSnapshot.value as? [String:Any],
+                   
+                   
+                   let word = dict["Word"] as? String{
+                    
+                    print(childSnapshot)
+                }
+                   
+                   
+                   }
+            
+            
+            
+        })
+        
+        
+    }
+    
+    
+    
+    
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)

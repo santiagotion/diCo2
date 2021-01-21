@@ -96,6 +96,6 @@ class MainDataManager {
             //return definitions
         }
         
-    }
+    } 
     
 }
