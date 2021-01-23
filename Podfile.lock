@@ -73,7 +73,7 @@ DEPENDENCIES:
   - Hero
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Firebase
     - FirebaseAuth
     - FirebaseAuthInterop
@@ -109,6 +109,6 @@ SPEC CHECKSUMS:
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
 
-PODFILE CHECKSUM: f52e603306299fba64b5479c691d1a9da45127e4
+PODFILE CHECKSUM: f7f51cad69d9378d01c315c8db0c7424651e0f14
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.10.0
