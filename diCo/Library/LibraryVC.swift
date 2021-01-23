@@ -63,76 +63,285 @@ class LibraryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         searchBar.delegate = self
         
         //searchBar.showsCancelButton = true
-        newWordObservver();
+//        newWordObservver();
+        
+        dataObserVer()
+//        newWordOberserver()
+//        newWordOberserver()
+//        newWordOberserver()
         
     }
     
-    func newWordObservver(){
-       
-        databaseHandle = ref?.observe(.childAdded, with: { snapshot in
+//    func newWordObservver(){
+//       
+//        ref?.observeSingleEvent(of: .value, with: { snapshot in
+//            DataHolder.dict_data.removeAll()
+//            // Code to execute when a new word is added
+//            print("III");
+//            print(snapshot)
+//            print("III");
+//            
+////            for child in snapshot.children {
+//
+//            let w_snapshot = snapshot.childSnapshot(forPath: "Word")
+//            let a_snapshot = snapshot.childSnapshot(forPath: "Audio")
+//            let frequency_snapshot = snapshot.childSnapshot(forPath: "Frequency")
+//            let date_snapshot = snapshot.childSnapshot(forPath: "Date")
+//                let meanings_snapshot = snapshot.childSnapshot(forPath: "Meanings")
+//            
+//            var t_audio = ""
+//            var t_word = ""
+//            var frequency = 1
+//            var date = 0.0
+//            var meanings: [Any] = []
+//            let audio = a_snapshot.value as? String
+//            let word = w_snapshot.value as? String
+//            if let actualWord = word{
+//                t_word = actualWord
+//            }
+//            if let actualAudio = audio
+//            {
+//                t_audio = actualAudio
+//            }
+//            if let t_frequency = frequency_snapshot.value as? Int {
+//                frequency = t_frequency
+//            }
+//            if let t_date = date_snapshot.value as? Double {
+//                date = t_date
+//            }
+//            if let t_meanings = meanings_snapshot.value as? [Any] {
+//                meanings = t_meanings
+//            }
+//            let General_word = Word(word: t_word, audio: t_audio, date: date, frequency: frequency, json: meanings)
+//            DataHolder.dict_data.append(General_word)
+//            
+////            print(meanings_snapshot)
+//            //self.recent_ele.append(General_word)
+//            self.tableView.reloadData()
+//            self.filterContentForSearchText(word!)
+////            }
+//        })
+//            
+//        
+//        
+//    }
+    
+    
+    func  dataObserVer(){
+        
+        ref?.observeSingleEvent(of: .value, with: { snapshot in
+            
             DataHolder.dict_data.removeAll()
-            // Code to execute when a new word is added
-            print("III");
-            print(snapshot)
-            print("III");
+            
+            for child in snapshot.children {
+                
+                if let childSnapshot = child as? DataSnapshot,
+                   
+                   let dict = childSnapshot.value as? [String:Any],
+                   
+//
+                   let w_snapshot = dict["Word"],
+                   let a_snapshot = dict["Audio"],
+                   let frequency_snapshot = dict["Frequency"],
+                   let date_snapshot = dict["Date"],
+                   let meanings_snapshot = dict["Meanings"]{
+                    
+                    
+                    
+                    var t_audio = ""
+                    var t_word = ""
+                    var frequency = 1
+                    var date = 0.0
+                    var meanings: [Any] = []
+                    let audio = a_snapshot as? String
+                    let word = w_snapshot as? String
+                    if let actualWord = word{
+                        t_word = actualWord
+                    }
+                    if let actualAudio = audio
+                    {
+                        t_audio = actualAudio
+                    }
+                    if let t_frequency = frequency_snapshot as? Int {
+                        frequency = t_frequency
+                    }
+                    if let t_date = date_snapshot as? Double {
+                        date = t_date
+                    }
+                    if let t_meanings = meanings_snapshot as? [Any] {
+                        meanings = t_meanings
+                    }
+                    let General_word = Word(word: t_word, audio: t_audio, date: date, frequency: frequency, json: meanings)
+                    DataHolder.dict_data.append(General_word)
+                    
+        //            print(meanings_snapshot)
+//                    self.recent_ele.append(General_word)
+                    self.filterContentForSearchText(word!)
+                    print((word ?? "") as String)
+//                    self.tableView.reloadData()
 
-            let w_snapshot = snapshot.childSnapshot(forPath: "Word")
-            let a_snapshot = snapshot.childSnapshot(forPath: "Audio")
-            let frequency_snapshot = snapshot.childSnapshot(forPath: "Frequency")
-            let date_snapshot = snapshot.childSnapshot(forPath: "Date")
-            let meanings_snapshot = snapshot.childSnapshot(forPath: "Meanings")
+                    
+                   
+                }
+                   
+                   
+                   }
             
-            var t_audio = ""
-            var t_word = ""
-            var frequency = 1
-            var date = 0.0
-            var meanings: [Any] = []
-            let audio = a_snapshot.value as? String
-            let word = w_snapshot.value as? String
-            if let actualWord = word{
-                t_word = actualWord
-            }
-            if let actualAudio = audio
-            {
-                t_audio = actualAudio
-            }
-            if let t_frequency = frequency_snapshot.value as? Int {
-                frequency = t_frequency
-            }
-            if let t_date = date_snapshot.value as? Double {
-                date = t_date
-            }
-            if let t_meanings = meanings_snapshot.value as? [Any] {
-                meanings = t_meanings
-            }
-            let General_word = Word(word: t_word, audio: t_audio, date: date, frequency: frequency, json: meanings)
-            DataHolder.dict_data.append(General_word)
             
-//            print(meanings_snapshot)
-            //self.recent_ele.append(General_word)
-            //self.tableView.reloadData()
-            self.filterContentForSearchText(word!)
-        }) { (error) in
-            print (error.localizedDescription)
-        }
+            
+        })
+        
         
     }
+    
+    func  newWordOberserver(){
+        
+        ref?.observe( .childAdded, with: { snapshot in
+            
+//            DataHolder.dict_data.removeAll()
+//            print(snapshot.children.v)
+            
+            var tempWord =  [Word]()
+            
+            for child in snapshot.children.allObjects {
+                
+                if let childSnapshot = child as? DataSnapshot,
+                   
+                   let dict = childSnapshot.value as? [String:Any],
+                   
+//
+                   let w_snapshot = dict["Word"],
+                   let a_snapshot = dict["Audio"],
+                   let frequency_snapshot = dict["Frequency"],
+                   let date_snapshot = dict["Date"],
+                   let meanings_snapshot = dict["Meanings"]{
+                    
+                    
+                    
+                    var t_audio = ""
+                    var t_word = ""
+                    var frequency = 1
+                    var date = 0.0
+                    var meanings: [Any] = []
+                    let audio = a_snapshot as? String
+                    let word = w_snapshot as? String
+                    if let actualWord = word{
+                        t_word = actualWord
+                    }
+                    if let actualAudio = audio
+                    {
+                        t_audio = actualAudio
+                    }
+                    if let t_frequency = frequency_snapshot as? Int {
+                        frequency = t_frequency
+                    }
+                    if let t_date = date_snapshot as? Double {
+                        date = t_date
+                    }
+                    if let t_meanings = meanings_snapshot as? [Any] {
+                        meanings = t_meanings
+                    }
+                    let General_word = Word(word: t_word, audio: t_audio, date: date, frequency: frequency, json: meanings)
+                    
+                    
+                    tempWord.append(General_word)
+                    
+        //            print(meanings_snapshot)
+                    //self.recent_ele.append(General_word)
+                    self.tableView.reloadData()
+                    self.filterContentForSearchText(word!)
+                    
+                   
+                }
+                   
+                   
+                   }
+            
+            DataHolder.dict_data.append(contentsOf: tempWord)
+            
+            
+            
+        })
+        
+        
+    }
+
     
     @IBAction func SearchOnline(_ sender: Any) {
         if let word = wordToSearch {
             Searcher.searchWordOnLine(word)
             
-//            if let found = Searcher.found {
-//                if found {
-//                    print("It's arriving!")
+//            print(word)
+            
+            print(Searcher.wordo as Any)
+            
+            if let found = Searcher.found {
+                if found {
+                    
+                    
+                    
 //
 //
-//                    //filterContentForSearchText(word)
-//                }
-//            }
+                    filterContentForSearchText(word)
+                }
+            }
             
         }
     }
+    
+    
+    func searchWordOnLine (_ word : String){
+        var ref:DatabaseReference?
+        ref = Database.database().reference()
+        
+        let urll = "https://api.dictionaryapi.dev/api/v2/entries/en/\(word)"
+        let manager:MainDataManager = MainDataManager()
+        var m_count = 1
+        manager.getData(from: urll) { (results:[Meanings]) in
+            
+            var audio = ""
+            if(results.count > 0)
+            {
+                
+                
+               
+             
+                audio = results[0].audio
+                ref?.child(word).child("Word").setValue(word)
+                ref?.child(word).child("Audio").setValue(audio)
+                ref?.child(word).child("Date").setValue(NSDate().timeIntervalSinceReferenceDate)
+                ref?.child(word).child("Frequency").setValue(1)
+                
+                for meaning in results
+                {
+                    //self.data.append(meani.partOfSpeech)
+                    //self.data.append(meani.meanings[0].synonyms[0])
+                    //print(self.data)
+                    //print(meaning.partOfSpeech)
+                    ref?.child(word).child("Meanings").child("\(m_count)").child("PartOfSpeech").setValue(meaning.partOfSpeech)
+                    var d_count = 1
+                    for definition in meaning.meanings
+                    {
+                        ref?.child(word).child("Meanings").child("\(m_count)").child("Definitions").child("\(d_count)").child("definition").setValue(definition.definition)
+                        ref?.child(word).child("Meanings").child("\(m_count)").child("Definitions").child("\(d_count)").child("example").setValue(definition.example)
+                        var s_count = 1;
+                        for synonym in definition.synonyms
+                        {
+                            ref?.child(word).child("Meanings").child("\(m_count)").child("Synonyms").child("\(s_count)").setValue(synonym)
+                            s_count = s_count+1
+                        }
+                        d_count = d_count+1
+                    }
+                    m_count = m_count + 1
+                }
+                
+            }
+        }
+        //return manager.wordFound
+    }
+
+    
+    
     var isSearchBarEmpty: Bool {
         return searchController.searchBar.text?.isEmpty ?? true
     }
@@ -226,6 +435,8 @@ extension LibraryVC : UISearchBarDelegate{
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        print(searchText)
         if (searchText.isEmpty) {
             isSearch = false
             tableView.reloadData()

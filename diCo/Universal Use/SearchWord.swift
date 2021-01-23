@@ -11,9 +11,13 @@ import FirebaseDatabase
 
 class Searcher {
     static var found: Bool!
+    static var wordo: [Meanings]!
+    
     static func searchWordOnLine (_ word : String){
+       
         var ref:DatabaseReference?
         ref = Database.database().reference()
+       
         
         let urll = "https://api.dictionaryapi.dev/api/v2/entries/en/\(word)"
         let manager:MainDataManager = MainDataManager()
@@ -21,13 +25,34 @@ class Searcher {
         manager.getData(from: urll) { (results:[Meanings]) in
             
             var audio = ""
+            
+//            var results2: [Meanings]
             if(results.count > 0)
             {
+                
+                print(results)
+//
+             
                 audio = results[0].audio
                 ref?.child(word).child("Word").setValue(word)
                 ref?.child(word).child("Audio").setValue(audio)
                 ref?.child(word).child("Date").setValue(NSDate().timeIntervalSinceReferenceDate)
                 ref?.child(word).child("Frequency").setValue(1)
+                
+//                let worObject = [
+//                    "Word": word,
+//                    "Audio":audio,
+//                    "Date": NSDate().timeIntervalSinceReferenceDate,
+//                    "Frequency": 1,
+//                    "Meanings": results[0].meanings,
+//
+//
+//
+//                ] as [String : Any]
+//
+//                ref?.child(word).setValue(worObject)
+                
+//                print(worObject)
                 
                 for meaning in results
                 {

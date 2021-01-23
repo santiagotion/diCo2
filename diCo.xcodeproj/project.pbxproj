@@ -27,6 +27,8 @@
 		CE04F49324ECE66900B80F86 /* LodingViewIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F49224ECE66900B80F86 /* LodingViewIndicator.swift */; };
 		CE04F49724ECE98C00B80F86 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F49624ECE98C00B80F86 /* SignUpVC.swift */; };
 		CE04F49D24ECF8A700B80F86 /* popularVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F49C24ECF8A700B80F86 /* popularVC.swift */; };
+		CE2E2FA925BAAD9E00964C60 /* searchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E2FA825BAAD9E00964C60 /* searchView.swift */; };
+		CE3BFD7925BA82FC00850A8E /* headerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3BFD7825BA82FC00850A8E /* headerCell.swift */; };
 		CE3DE48225B9530700864D9F /* newHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DE48125B9530700864D9F /* newHomeVC.swift */; };
 		CE3DE48525B9662400864D9F /* CardLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DE48425B9662400864D9F /* CardLayoutAttributes.swift */; };
 		CE72596A24EA3DA40084A0DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72596924EA3DA40084A0DD /* AppDelegate.swift */; };
@@ -65,6 +67,8 @@
 		CE04F49224ECE66900B80F86 /* LodingViewIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LodingViewIndicator.swift; sourceTree = "<group>"; };
 		CE04F49624ECE98C00B80F86 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		CE04F49C24ECF8A700B80F86 /* popularVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popularVC.swift; sourceTree = "<group>"; };
+		CE2E2FA825BAAD9E00964C60 /* searchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchView.swift; sourceTree = "<group>"; };
+		CE3BFD7825BA82FC00850A8E /* headerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headerCell.swift; sourceTree = "<group>"; };
 		CE3DE48125B9530700864D9F /* newHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newHomeVC.swift; sourceTree = "<group>"; };
 		CE3DE48425B9662400864D9F /* CardLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLayoutAttributes.swift; sourceTree = "<group>"; };
 		CE72596624EA3DA40084A0DD /* diCo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = diCo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,6 +207,7 @@
 		CE72595D24EA3DA40084A0DD = {
 			isa = PBXGroup;
 			children = (
+				CE7CFED825BBFB490068C6A2 /* New  */,
 				CE72596824EA3DA40084A0DD /* diCo */,
 				CE72596724EA3DA40084A0DD /* Products */,
 				CDFACE635BB4211B46239F16 /* Pods */,
@@ -232,8 +237,8 @@
 				CE72596B24EA3DA40084A0DD /* SceneDelegate.swift */,
 				CE72596D24EA3DA40084A0DD /* WelcomeVC.swift */,
 				CE72596F24EA3DA40084A0DD /* Main.storyboard */,
+				CE3BFD7825BA82FC00850A8E /* headerCell.swift */,
 				CE3DE48425B9662400864D9F /* CardLayoutAttributes.swift */,
-				CE3DE48125B9530700864D9F /* newHomeVC.swift */,
 				CE72597224EA3DA70084A0DD /* Assets.xcassets */,
 				CE72597424EA3DA70084A0DD /* LaunchScreen.storyboard */,
 				CEC41E0024F08AA6008C8135 /* GoogleService-Info.plist */,
@@ -241,6 +246,15 @@
 				CE72598124EB91FC0084A0DD /* SelfSizedTableView.swift */,
 			);
 			path = diCo;
+			sourceTree = "<group>";
+		};
+		CE7CFED825BBFB490068C6A2 /* New  */ = {
+			isa = PBXGroup;
+			children = (
+				CE2E2FA825BAAD9E00964C60 /* searchView.swift */,
+				CE3DE48125B9530700864D9F /* newHomeVC.swift */,
+			);
+			path = "New ";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE2E2FA925BAAD9E00964C60 /* searchView.swift in Sources */,
 				CE3DE48225B9530700864D9F /* newHomeVC.swift in Sources */,
 				CE72596E24EA3DA40084A0DD /* WelcomeVC.swift in Sources */,
 				77027BF425A8BD3000D2B8E6 /* LibraryCell.swift in Sources */,
@@ -383,6 +398,7 @@
 				77FBBB142598D9FF00C570D6 /* APIDataManager.swift in Sources */,
 				CE04F49324ECE66900B80F86 /* LodingViewIndicator.swift in Sources */,
 				77FBBB7B259A22CC00C570D6 /* definitionCell.swift in Sources */,
+				CE3BFD7925BA82FC00850A8E /* headerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
