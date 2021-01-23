@@ -10,7 +10,7 @@ target 'diCo' do
   pod 'Hero'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
-  pod 'Koloda'
+
 
 
 end
