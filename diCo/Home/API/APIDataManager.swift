@@ -83,6 +83,13 @@ struct Word {
     let date: Double
     let frequency: Int
     let meanings: [MMeaning]
+    init () {
+        self.word = String()
+        self.audio = String()
+        self.date = Double()
+        self.frequency = Int()
+        self.meanings = []
+    }
     init (word: String, audio: String, date: Double, frequency: Int, json:[Any]) {
         self.word = word
         self.audio = audio

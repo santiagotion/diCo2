@@ -11,10 +11,11 @@ import FirebaseDatabase
 
 class Searcher {
     static var found: Bool!
-    static func searchWordOnLine (_ word : String){
+    //static var generatedWord:Word!
+    static func searchWordOnLine (_ word : String, completion: @escaping (Word) -> ()){
         var ref:DatabaseReference?
         ref = Database.database().reference()
-        
+        var generatedWord = Word()
         let urll = "https://api.dictionaryapi.dev/api/v2/entries/en/\(word)"
         let manager:MainDataManager = MainDataManager()
         var m_count = 1
@@ -28,13 +29,18 @@ class Searcher {
                 ref?.child(word).child("Audio").setValue(audio)
                 ref?.child(word).child("Date").setValue(NSDate().timeIntervalSinceReferenceDate)
                 ref?.child(word).child("Frequency").setValue(1)
-                
+                var i = 0
                 for meaning in results
                 {
                     //self.data.append(meani.partOfSpeech)
                     //self.data.append(meani.meanings[0].synonyms[0])
                     //print(self.data)
                     //print(meaning.partOfSpeech)
+//                    if i == 0 {
+//                        generatedWord = Word(word:word, audio: audio, date: NSDate().timeIntervalSinceReferenceDate, frequency: 1, json: meaning)
+//                    }
+                    
+                    
                     ref?.child(word).child("Meanings").child("\(m_count)").child("PartOfSpeech").setValue(meaning.partOfSpeech)
                     var d_count = 1
                     for definition in meaning.meanings
@@ -50,10 +56,13 @@ class Searcher {
                         d_count = d_count+1
                     }
                     m_count = m_count + 1
+                    i = i + 1
                 }
                 
             }
         }
+        completion(generatedWord)
+        //finished()
         //return manager.wordFound
     }
     
